@@ -1,0 +1,30 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+
+        TextInput:
+            id: input_miles
+            text: ''
+            multiline: False
+            hint_text: "Enter miles"
+            on_text: app.handle_calculate()
+
+        Button:
+            text: '↑'
+            on_press: app.handle_increment(1)
+
+        Button:
+            text: '↓'
+            on_press: app.handle_increment(-1)
+
+    Label:
+        text: app.output_text
+        color: (1, 1, 0, 1)  # yellow result
+
+    Label:
+        text: 'Enter miles to convert to kilometres'
